@@ -1,0 +1,14 @@
+"""
+1. i[::-1] : 문자열을 거꾸로!
+2. join() : list의 내용물을 ' ' 안에 있는 요소와 함께 붙여 줌.
+"""
+
+import sys
+n = int(input())
+
+for _ in range(n):
+  string = list(sys.stdin.readline().split())
+  reverse = []
+  for i in string:
+    reverse.append(i[::-1])
+  print(' '.join(reverse))
