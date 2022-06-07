@@ -1,0 +1,33 @@
+import sys
+t = int(sys.stdin.readline())
+
+for _ in range(t):
+  input_string = list(sys.stdin.readline())
+  stack = []
+  status = 1 # YES = 1, NO = 0
+
+  # "("를 만나면 stack에 넣고 ")"를 만나면 stack을 pop
+  # stack이 비어있는 상태에서 ")"를 만나면 NO 
+  # input_string의 for문이 끝났는데 stack에 "("가 남아있으면 NO
+  
+  for i in input_string:
+    if i == "(":
+      stack.append(i)
+    elif i == ")":
+      if len(stack) == 0:
+        status = 0
+        break
+      else : 
+        stack.pop()
+    else :
+      continue
+      
+  if stack:
+    status = 0
+
+  if status == 0:
+    print("NO")
+  else:
+    print("YES")
+  
+  
